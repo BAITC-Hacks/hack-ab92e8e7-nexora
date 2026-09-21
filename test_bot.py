@@ -14,15 +14,15 @@ class TestFAQBot(unittest.TestCase):
 
     def test_question_time(self):
         answer = find_best_answer("Во сколько начинается и когда финиш?", self.faq_list)
-        self.assertIn("18:00 до 21:00", answer)
+        self.assertIn("Репетиция проходит сегодня с 18:00 до 19:30 (длительность — 1.5 часа)", answer)
 
     def test_question_team(self):
         answer = find_best_answer("Сколько человек может быть в команде?", self.faq_list)
-        self.assertIn("от 2 до 5 человек", answer)
+        self.assertIn("В команде может быть от 1 до 3 человек. Ограничений по ролям нет.", answer)
 
     def test_question_tracks(self):
         answer = find_best_answer("Какие есть треки и направления?", self.faq_list)
-        self.assertIn("AI/ML сервисы", answer)
+        self.assertIn("Доступны три трека: LLM-приложения, Агентные системы, компьютерное зрение.", answer)
 
     def test_question_submission(self):
         answer = find_best_answer("Куда и как сдавать проект?", self.faq_list)
